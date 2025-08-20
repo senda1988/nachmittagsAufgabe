@@ -1,0 +1,29 @@
+name: nachmittagsAufgabe
+
+on: push
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: job1
+        run: echo "Hello World"
+
+      - name: job2
+        run: echo "Hello World von Job2"
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+
+    steps:
+      - name: job2
+        run: echo "Hello World von Job2"
+  job3:
+    runs-on: ubuntu-latest
+    needs: job2
+
+    steps:
+      - name: job3
+        run: echo "date von heute ist $(date)"
+        
