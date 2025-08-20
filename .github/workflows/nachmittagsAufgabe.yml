@@ -25,5 +25,4 @@ jobs:
 
     steps:
       - name: job3
-        run: echo "date von heute ist $(date)"
-        
+        run: echo "date von heute ist $(date +%d.%m.%Y)"
