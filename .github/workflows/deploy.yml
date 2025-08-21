@@ -18,6 +18,6 @@ jobs:
       
       - name: SSH connection
         run: |
-          scp -i ~/.ssh/meinPrivateKey frontend/index.html ubuntu@${{secrets.EC2_IP}}:/home/ubuntu/index.html
+          scp -i ~/.ssh/meinPrivateKey index.html ubuntu@${{secrets.EC2_IP}}:/home/ubuntu/index.html
           ssh -i ~/.ssh/meinPrivateKey ubuntu@${{secrets.EC2_IP}} "sudo cp /home/ubuntu/index.html /var/www/html/index.html"
     
